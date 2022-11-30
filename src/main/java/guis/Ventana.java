@@ -6,6 +6,7 @@ import modelo.Seleccion;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Ventana extends JFrame {
@@ -75,13 +76,13 @@ public abstract class Ventana extends JFrame {
         return etiqueta;
     }
 
-    protected JComboBox generarComboBox(Seleccion seleccion, int x, int y, int ancho, int largo) {
+    protected JComboBox generarComboBox(ArrayList<Seleccion> selecciones, int x, int y, int ancho, int largo) {
         JComboBox <String> comboBox = new JComboBox<String>();
         this.add(comboBox);
         comboBox.setBounds(x,y,ancho,largo);
 
-        var jugadores = seleccion.getJugadores();
-        for (Jugador j: jugadores) {
+
+        for (Seleccion j: selecciones) {
             comboBox.addItem(j.getNombre());
         }
 

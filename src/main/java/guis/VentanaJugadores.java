@@ -1,19 +1,22 @@
 package guis;
 
+import modelo.Seleccion;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaJugadores extends Ventana implements ActionListener {
+    private Seleccion seleccion;
     private JButton editarJugadorBtn;
     private JButton guardarCambiosBtn;
     private JButton volverBtn;
 
-    public VentanaJugadores(){
+    public VentanaJugadores(Seleccion seleccion){
+        this.seleccion = seleccion;
+
         this.setTitle("Jugadores");
-
         this.generarEtiqueta("Informacion oficial: ", 20, 10, 150, 20);
-
 
 
         editarJugadorBtn = generarBoton("Editar ",  20, 200, 80, 60);
@@ -23,7 +26,10 @@ public class VentanaJugadores extends Ventana implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getSource() == volverBtn) {
+            //new VentanaEquipos();
+            this.dispose();
+        }
 
     }
 }
