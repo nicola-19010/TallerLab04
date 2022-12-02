@@ -18,6 +18,16 @@ public class Seleccion {
         this.bandera = bandera;
     }
 
+    public static Seleccion buscarSeleccionPorNombre(String nombre, ArrayList<Seleccion> selecciones) throws SeleccionNoEncontradaException {
+        for (Seleccion s: selecciones) {
+            if(s.getNombre().equals(nombre)) {
+                return s;
+            }
+        }
+
+        throw new SeleccionNoEncontradaException();
+    }
+
     public String getBandera() {
         return bandera;
     }

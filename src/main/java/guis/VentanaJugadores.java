@@ -18,6 +18,8 @@ public class VentanaJugadores extends Ventana implements ActionListener {
         this.setTitle("Jugadores");
         this.generarEtiqueta("Informacion oficial: ", 20, 10, 150, 20);
 
+        generarComboBoxJugadores( seleccion.getJugadores(),30,20,300,30);
+
 
         editarJugadorBtn = generarBoton("Editar ",  20, 200, 80, 60);
         guardarCambiosBtn = generarBoton("Guardar",120,200,100,60);

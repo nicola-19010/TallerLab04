@@ -12,5 +12,6 @@ public class Launcher {
         ArrayList<Seleccion> selecciones = new ArrayList<>();
         DatosSelecciones.leerArchivoSelecciones(selecciones, "teams.txt");
         new VentanaEquipos(selecciones);
+
     }
 }

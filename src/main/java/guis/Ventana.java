@@ -7,13 +7,13 @@ import modelo.Seleccion;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public abstract class Ventana extends JFrame {
 
+
     public Ventana() {
         this.setLayout(null);
-        this.setSize(400,300);
+        this.setSize(450,350);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -52,6 +52,7 @@ public abstract class Ventana extends JFrame {
         return boton;
     }
 
+
     protected JButton generarBoton(int x, int y, int ancho, int largo) {
         JButton boton = new JButton();
         boton.setBounds(x, y, ancho, largo);
@@ -76,13 +77,37 @@ public abstract class Ventana extends JFrame {
         return etiqueta;
     }
 
-    protected JComboBox generarComboBox(ArrayList<Seleccion> selecciones, int x, int y, int ancho, int largo) {
+    protected JLabel generarEtiquetaBandera (String texto, int x, int y, int ancho, int largo) {
+        JLabel etiqueta = new JLabel(texto);
+        etiqueta.setBounds(x, y, ancho, largo);
+        var imagen =  new ImageIcon("./src/main/resources/"+texto);
+        etiqueta.setIcon(imagen);
+        this.add(etiqueta);
+        return etiqueta;
+    }
+
+
+
+    protected JComboBox generarComboBoxSelecciones(ArrayList<Seleccion> selecciones, int x, int y, int ancho, int largo) {
         JComboBox <String> comboBox = new JComboBox<String>();
         this.add(comboBox);
         comboBox.setBounds(x,y,ancho,largo);
 
 
-        for (Seleccion j: selecciones) {
+        for (Seleccion s: selecciones) {
+            comboBox.addItem(s.getNombre());
+        }
+
+        return comboBox;
+    }
+
+    protected JComboBox generarComboBoxJugadores(ArrayList<Jugador> jugadores, int x, int y, int ancho, int largo) {
+        JComboBox <String> comboBox = new JComboBox<String>();
+        this.add(comboBox);
+        comboBox.setBounds(x,y,ancho,largo);
+
+
+        for (Jugador j: jugadores) {
             comboBox.addItem(j.getNombre());
         }
 
