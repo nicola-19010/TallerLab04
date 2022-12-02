@@ -93,7 +93,6 @@ public abstract class Ventana extends JFrame {
         this.add(comboBox);
         comboBox.setBounds(x,y,ancho,largo);
 
-
         for (Seleccion s: selecciones) {
             comboBox.addItem(s.getNombre());
         }
