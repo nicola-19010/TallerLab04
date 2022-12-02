@@ -28,8 +28,5 @@ public class DatosJugadores {
         }
     }
 
-    public static void main(String[] args) {
-        var jugadores = new ArrayList<Jugador>();
-        leerArchivoJugadores(jugadores, "chi.txt"); //./src/main/resources/chi.txt
-    }
+
 }

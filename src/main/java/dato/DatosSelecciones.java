@@ -33,8 +33,5 @@ public class DatosSelecciones {
         }
     }
 
-    public static void main(String[] args) {
-        ArrayList<Seleccion> selecciones = new ArrayList<>();
-        DatosSelecciones.leerArchivoSelecciones(selecciones, "teams.txt");
-    }
+
 }
