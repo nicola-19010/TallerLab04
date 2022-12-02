@@ -108,7 +108,7 @@ public abstract class Ventana extends JFrame {
 
 
         for (Jugador j: jugadores) {
-            comboBox.addItem(j.getNombre());
+            comboBox.addItem(j.getNumero() +"           "+ j.getNombre() +"         "+ j.getPosicion());
         }
 
         return comboBox;

@@ -24,24 +24,6 @@ public class VentanaEquipos extends Ventana implements ActionListener {
     private Seleccion seleccionElejida; //experimental
 
     public VentanaEquipos(ArrayList<Seleccion> selecciones) {
-        /*this.selecciones = selecciones;
-
-        this.setTitle("Equipos");
-        this.generarEtiqueta("Selecciona equipo: ", 20, 100, 150, 20);
-        this.generarEtiqueta("Ranking FIFA: ", 20, 150, 100, 20);
-        rankingFIFAEligida = this.generarEtiqueta("________", 150, 150, 80, 20);
-
-
-
-        comboBoxSelecciones = generarComboBoxSelecciones(selecciones, 30,20,150,30);
-
-
-
-        okBtn = generarBoton("OK", 80,65,60,35);
-        jugadoresBtn = generarBoton("Jugadores", 20, 200, 100, 60);
-        jugadoresBtn.addActionListener(this);
-        salirBtn = generarBoton("Salir", 130, 200, 100, 60);
-        salirBtn.addActionListener(this);*/
 
         this.selecciones = selecciones;
 
@@ -50,10 +32,10 @@ public class VentanaEquipos extends Ventana implements ActionListener {
         this.generarEtiqueta("Selecciona equipo: ", 20, 50, 120, 20);
         this.generarEtiqueta("Ranking FIFA: ", 20, 150, 110, 20);
 
-        jugadoresBtn = this.generarBoton("Salir", 200, 200, 150, 30);
+        jugadoresBtn = this.generarBoton("Jugadores", 200, 200, 150, 30);
         jugadoresBtn.addActionListener(this);
 
-        salirBtn = this.generarBoton("Jugadores", 20, 200, 150, 30);
+        salirBtn = this.generarBoton("Salir", 20, 200, 150, 30);
         salirBtn.addActionListener(this);
 
         informacionBtn = this.generarBoton("Informacion", 150, 260, 150, 30);
@@ -92,8 +74,10 @@ public class VentanaEquipos extends Ventana implements ActionListener {
                 ex.printStackTrace();
             }
         } else if (e.getSource() == jugadoresBtn){
-            //this.dispose();
+            this.dispose();
             try {
+                var  cbs = comboBoxSelecciones.getSelectedItem().toString();
+                System.out.println();
                 new VentanaJugadores(Seleccion.buscarSeleccionPorNombre(comboBoxSelecciones.getSelectedItem().toString(), this.selecciones));
             } catch (SeleccionNoEncontradaException ex) {
                 ex.printStackTrace();
